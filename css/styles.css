@@ -348,19 +348,16 @@ button {
 }
 
 @media screen and (min-width: 769px) {
-    /* keep the resume to the far right of the nav menu */
     .nav__list {
         gap: var(--spacing-lg);
+    }
+    .nav__resume {
+        display: inline-flex;
     }
 }
 
 /* Theme icon visibility */
 .theme-icon { display: none; }
-
-    /* Hide resume button on small screens to reduce header clutter */
-    .nav__resume {
-        display: none;
-    }
 .theme-toggle[data-theme-state="dark"] .icon-moon { display: block; }
 .theme-toggle[data-theme-state="light"] .icon-sun { display: block; }
 
@@ -420,19 +417,31 @@ button {
     z-index: 1;
 }
 
-.hero__badge {
+.hero__resume {
     display: inline-flex;
     align-items: center;
-    width: fit-content;
-    padding: 0.45rem 0.8rem;
+    justify-content: center;
+    padding: 0.95rem 1.35rem;
     margin-bottom: 1rem;
-    border: 1px solid rgba(79, 70, 229, 0.25);
     border-radius: var(--radius-full);
     background: rgba(79, 70, 229, 0.12);
+    border: 1px solid rgba(79, 70, 229, 0.25);
     color: var(--color-primary);
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.03em;
+    font-weight: 700;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hero__resume:hover,
+.hero__resume:focus-visible {
+    background: rgba(79, 70, 229, 0.2);
+    border-color: rgba(79, 70, 229, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(79, 70, 229, 0.18);
+}
+
+.hero__resume:focus-visible {
+    outline: 2px solid rgba(79, 70, 229, 0.65);
+    outline-offset: 4px;
 }
 
 .hero__greeting {
